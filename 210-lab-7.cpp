@@ -1,6 +1,6 @@
 // COMSC-210 | Lab 7 | Dainiz Almazan
 // IDE used: CLion
-// TODO: pointer notation rather than array notation
+
 #include <iostream>
 using namespace std;
 
@@ -24,10 +24,16 @@ int main(){
     *(arrptr + 3) = "Daisy";
     *(arrptr + 4) = "Lily";
 
-	arrptr = reverseArray(arrptr, ARRAY_SIZE);
+	cout << "Original array: ";
+	displayArray(arrptr, ARRAY_SIZE);
 
-// Call the two functions appropriately to reverse and output the array.
-  return 0;
+	arrptr = reverseArray(arrptr, ARRAY_SIZE);
+	cout << "\nReversed array: ";
+	displayArray(arrptr, ARRAY_SIZE);
+
+	delete [] arrptr;
+
+	return 0;
 }
 
 string *reverseArray(string* arrptr, const int size){
@@ -47,5 +53,6 @@ string *reverseArray(string* arrptr, const int size){
 }
 
 void displayArray(string* arrptr, const int size) {
-
+	for (int i = 0; i < ARRAY_SIZE; i++)
+		cout << *(arrptr + i) << " ";
 }
