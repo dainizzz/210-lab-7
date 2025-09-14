@@ -7,11 +7,11 @@ using namespace std;
 // reverseArray() receives a dynamic string array, reverses the elements, and returns a pointer to the modified array.
 // arguments: a dynamic array of type string
 // returns: a pointer to the reversed array
-string reverseArray(*string);
+string reverseArray(string*);
 // displayArray() receives a dynamic string array, and outputs its elements.
 // arguments: a dynamic array of type string
 // returns: nothing
-void displayArray(*string);
+void displayArray(string*);
 
 int main(){
 // Create a dynamic string array and populate it with 5 names of your choice.
@@ -19,9 +19,9 @@ int main(){
   return 0;
 }
 
-string reverseArray(*string){
+string reverseArray(string*){
 
 }
-void displayArray(*string) {
+void displayArray(string*) {
 
 }
