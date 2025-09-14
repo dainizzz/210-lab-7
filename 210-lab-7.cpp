@@ -46,8 +46,7 @@ string *reverseArray(string *arrptr, const int size) {
 	string temp;
 
 	// Using two variables to iterate from front (left) and end (right) of array simultaneously
-	// When left and right have equal values, or if left is greater than right,
-	// all names have been swapped
+	// When left and right have equal values, or if left is greater than right, all names have been swapped
 	for (int left = 0, right = size - 1; left <= right; left++, right--) {
 		// Holding the value on the left side of the array in temp
 		temp = *(arrptr + left);
