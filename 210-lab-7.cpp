@@ -1,7 +1,7 @@
 // COMSC-210 | Lab 7 | Dainiz Almazan
 // IDE used: CLion
 // TODO: pointer notation rather than array notation
-#include <string>
+#include <iostream>
 using namespace std;
 
 const int ARRAY_SIZE = 5;
@@ -9,7 +9,7 @@ const int ARRAY_SIZE = 5;
 // reverseArray() receives a dynamic string array, reverses the elements, and returns a pointer to the modified array.
 // arguments: a dynamic array of type string, an int for the array size
 // returns: a pointer to the reversed array
-string reverseArray(string*, int);
+string *reverseArray(string*, int);
 // displayArray() receives a dynamic string array, and outputs its elements.
 // arguments: a dynamic array of type string, an int for the array size
 // returns: nothing
@@ -24,20 +24,26 @@ int main(){
     *(arrptr + 3) = "Daisy";
     *(arrptr + 4) = "Lily";
 
+	arrptr = reverseArray(arrptr, ARRAY_SIZE);
+
 // Call the two functions appropriately to reverse and output the array.
   return 0;
 }
 
-string reverseArray(string* arrptr, const int size){
+string *reverseArray(string* arrptr, const int size){
 	// use for temporarily holding value when swapping
 	string temp;
 
 	// using two variables to iterate from front and end of array simultaneously
+	// when the two variables have the same value, or if left is greater than right,
+	// all names have been swapped
 	for (int left = 0, right = size - 1; left <= right; left++, right--) {
 		temp = *(arrptr + left);
 		*(arrptr + left) = *(arrptr + right);
 		*(arrptr + right) = temp;
 	}
+
+	return arrptr;
 }
 
 void displayArray(string* arrptr, const int size) {
